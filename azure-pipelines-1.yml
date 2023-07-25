@@ -1,4 +1,16 @@
 # Starter pipeline
+- task: SynopsysDetectTask@8
+  inputs:
+    BlackDuckService: 'HUB Test Env'
+    DetectRunMode: 'UseAirGap'
+    DetectArguments: |
+      --blackduck.trust.cert=true
+      --detect.blackduck.signature.scanner.snippet.matching=FULL_SNIPPET_MATCHING
+      --detect.blackduck.signature.scanner.individual.file.matching=ALL
+      --detect.detector.search.depth=100
+      --detect.blackduck.signature.scanner.upload.source.mode=true
+      --detect.project.name=Moodle_Pipeline_Azure_5_Stefan
+      --detect.project.version.name=1.0
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
